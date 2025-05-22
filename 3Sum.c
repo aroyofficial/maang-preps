@@ -10,7 +10,7 @@ int comparator(const void *a, const void *b) {
     return ((KeyValuePair *)a)->value - ((KeyValuePair *)b)->value;
 }
 
-int *twoSum(int *nums, int n, int target, int *result) {
+int *threeSum(int *nums, int n, int target, int *result) {
     if (nums) {
         int left = 0, right = n - 1;
         KeyValuePair *kv = (KeyValuePair *) malloc(n * sizeof(KeyValuePair));
@@ -68,7 +68,7 @@ int main() {
             }
             printf("Enter the target: ");
             scanf("%d", &target);
-            result = twoSum(nums, n, target, result);
+            result = threeSum(nums, n, target, result);
             if (result) {
                 printf("Solution: [%d,%d,%d]", result[0], result[1], result[2]);
                 free(result);
@@ -76,6 +76,7 @@ int main() {
             else {
                 printf("No solution found");
             }
+            free(nums);
         }
         else {
             printf("Memory allocation failed");

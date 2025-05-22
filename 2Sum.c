@@ -72,6 +72,7 @@ int main() {
             else {
                 printf("No solution found");
             }
+            free(nums);
         }
         else {
             printf("Memory allocation failed");
